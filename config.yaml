@@ -5,7 +5,7 @@ settings:
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
   # Min time between KV writes, unless status changes. Helps stay within free tier limits. Default: 60 minutes.
-  kvWriteCooldownMinutes: 60
+  kvWriteCooldownMinutes: 2
 
   allmonitorsOperational: 'All Systems Operational'
   notAllmonitorsOperational: 'Not All Systems Operational'
@@ -24,7 +24,7 @@ monitors:
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+    linkable: true # allows the title to be a link, default=true
 
   - id: www-cloudflare-com
     name: www.cloudflare.com
